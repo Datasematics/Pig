@@ -11,14 +11,13 @@ Description:
 Loading customer data file into HBase using Apache PIG.
 
 Execution Steps:
-1.	Step 1: Create a HBase table ‘customers’ with column_family ‘customers_data’ from HBase shell.
+1. Create a HBase table ‘customers’ with column_family ‘customers_data’ from HBase shell.
 -	hbase shell
-
 -	create 'customers', 'customers_data'
 -	list			// will list the tables
 -	exit
 
-2.	copy  the below dataset in file called ‘customers’
+2.copy  the below dataset in file called ‘customers’
 
 Custno, firstname, lastname, age, profession
 
@@ -52,7 +51,6 @@ Custno, firstname, lastname, age, profession
       - grunt> exec /example.pig
 
 Known Issues: 
-
 1.	check all hbase services are running if not all the services.
 
 -	sudo service hbase-thrift status/start
