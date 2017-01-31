@@ -1,0 +1,64 @@
+Problem Statement: 
+Write a PIG script to load sample data into Hbase tabel 
+
+Tags :
+Thriftserver, regionserver, hbase and  pig.
+
+Use cases: 
+Sample test to load data using PIG script into hbase table, this hbase table should be created before.
+
+Description: 
+Loading customer data file into HBase using Apache PIG.
+
+Execution Steps:
+1.	Step 1: Create a HBase table ‘customers’ with column_family ‘customers_data’ from HBase shell.
+-	hbase shell
+
+-	create 'customers', 'customers_data'
+-	list			// will list the tables
+-	exit
+
+2.	copy  the below dataset in file called ‘customers’
+
+Custno, firstname, lastname, age, profession
+
+4000001,Kristina,Chung,55,Pilot
+4000002,Paige,Chen,74,Teacher
+4000003,Sherri,Melton,34,Firefighter
+4000004,Gretchen,Hill,66,Computer hardware engineer
+4000005,Karen,Puckett,74,Lawyer
+4000006,Patrick,Song,42,Veterinarian
+4000007,Elsie,Hamilton,43,Pilot
+4000008,Hazel,Bender,63,Carpenter
+4000009,Malcolm,Wagner,39,Artist
+4000010,Dolores,McLaughlin,60,Writer
+4000011,Francis,McNamara,47,Therapist
+4000012,Sandy,Raynor,26,Writer
+4000013,Marion,Moon,41,Carpenter
+4000014,Beth,Woodard,65,
+4000015,Julia,Desai,49,Musician
+4000016,Jerome,Wallace,52,Pharmacist
+4000017,Neal,Lawrence,72,Computer support specialist
+4000018,Jean,Griffin,45,Childcare worker
+4000019,Kristine,Dougherty,63,Financial analyst
+
+3. copy this consumers file into hdfs 
+-> Hadoop fs –mkdir /etc/training
+- >  Hadoop fs  -put  /path/to/customers   /etc/ training/ 
+
+4.	PIG script copy the code and save in file with extension ‘.pig’ (example: example.pig)
+
+      - go to pig shell
+      - grunt> exec /example.pig
+
+Known Issues: 
+
+1.	check all hbase services are running if not all the services.
+
+-	sudo service hbase-thrift status/start
+-	sudo service hbase-master status/start
+-	sudo service habse-regionserver status/start
+
+External references: 
+1.	http://princetonits.com/blog/technology/loading-customer-data-into-hbase-using-a-pig-script/
+
