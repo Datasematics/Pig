@@ -51,7 +51,7 @@ Custno, firstname, lastname, age, profession
       - grunt> exec /example.pig
 
 Known Issues: 
-1.	check all hbase services are running if not all the services.
+1.	check all hbase services are running if not run all the services.
 
 -	sudo service hbase-thrift status/start
 -	sudo service hbase-master status/start
